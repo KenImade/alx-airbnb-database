@@ -9,7 +9,7 @@ erDiagram
         VARCHAR email "NOT NULL, UNIQUE, Indexed"
         VARCHAR password_hash "NOT NULL"
         VARCHAR phone_number "NULL"
-        VARCHAR role "ENUM ('guest', 'host', 'admin')"
+        VARCHAR role "ENUM ('guest', 'host', 'admin') NOT NULL"
         TIMESTAMP created_at "DEFAULT CURRENT_TIMESTAMP"
     }
 
