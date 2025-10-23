@@ -1,16 +1,22 @@
-/* 
-This script creates the tables required for the AirBnB project.
-It follows 3NF principles and uses enums for controlled categorical data.
-*/
+-- ======================================================
+-- Airbnb Database Schema Script
+-- Author: Kenneth Imade
+-- Date: 2025-10-23
+-- Description: This script creates the tables required for 
+--              the AirBnB projects and uses enums for controlled categorical data.
+-- ======================================================
 
-
--- Enums
+-- ======================================================
+-- Enum TYPES
+-- ======================================================
 
 CREATE TYPE role AS ENUM ('guest', 'host', 'admin');
 CREATE TYPE status AS ENUM ('pending', 'confirmed', 'canceled');
 CREATE TYPE payment_method AS ENUM ('credit_card', 'paypal', 'stripe');
 
--- Tables
+-- ======================================================
+-- TABLES
+-- ======================================================
 
 CREATE TABLE IF NOT EXISTS "User" (
     user_id UUID PRIMARY KEY,
@@ -70,7 +76,10 @@ CREATE TABLE IF NOT EXISTS Payment (
     payment_method payment_method NOT NULL
 );
 
--- Indexes
+-- ======================================================
+-- INDEXES
+-- ======================================================
+
 CREATE INDEX idx_user_email ON "User" (email);
 CREATE INDEX idx_booking_property_id ON Booking (property_id);
 CREATE INDEX idx_payment_booking_id ON Payment (booking_id);
