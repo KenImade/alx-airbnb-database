@@ -16,7 +16,7 @@ SELECT
 FROM Review r
 WHERE r.property_id IN (SELECT property_id FROM Property)
 GROUP BY r.property_id
-HAVING average_rating > 4
+HAVING AVG(r.rating) > 4
 ORDER BY average_rating DESC;
 
 -- Users who have made more than 3 bookings
