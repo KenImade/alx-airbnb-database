@@ -46,7 +46,6 @@ VALUES
         'Beachfront Apartment', 'Modern apartment with stunning sea views.', 'Malibu, CA', 250.00),
     (uuid_generate_v4(), (SELECT user_id FROM "User" WHERE email = 'bob@example.com'),
         'City Loft', 'Chic loft in downtown New York City.', 'New York, NY', 320.00),
-    -- New properties
     (uuid_generate_v4(), (SELECT user_id FROM "User" WHERE email = 'frank@example.com'),
         'Lakeside Cottage', 'Peaceful cottage with private dock and fishing access.', 'Lake Tahoe, NV', 195.00),
     (uuid_generate_v4(), (SELECT user_id FROM "User" WHERE email = 'henry@example.com'),
@@ -85,7 +84,6 @@ VALUES
         (SELECT property_id FROM Property WHERE name = 'City Loft'),
         (SELECT user_id FROM "User" WHERE email = 'alice@example.com'),
         '2025-12-20', '2025-12-23', 960.00, 'confirmed'),
-    -- New bookings
     (uuid_generate_v4(),
         (SELECT property_id FROM Property WHERE name = 'Lakeside Cottage'),
         (SELECT user_id FROM "User" WHERE email = 'grace@example.com'),
@@ -128,7 +126,7 @@ VALUES
         '2025-12-05', '2025-12-08', 495.00, 'confirmed');
 
 -- ======================================================
--- Payments (12 total: 2 original + 10 new)
+-- Payments
 -- ======================================================
 INSERT INTO Payment (payment_id, booking_id, amount, payment_method)
 VALUES
@@ -183,7 +181,6 @@ VALUES
         (SELECT property_id FROM Property WHERE name = 'City Loft'),
         (SELECT user_id FROM "User" WHERE email = 'alice@example.com'),
         4, 'Stylish place but a bit noisy at night.'),
-    -- New reviews
     (uuid_generate_v4(),
         (SELECT property_id FROM Property WHERE name = 'Lakeside Cottage'),
         (SELECT user_id FROM "User" WHERE email = 'grace@example.com'),
@@ -238,7 +235,6 @@ VALUES
         (SELECT user_id FROM "User" WHERE email = 'bob@example.com'),
         (SELECT user_id FROM "User" WHERE email = 'alice@example.com'),
         'You''re welcome, Alice! Glad you enjoyed your stay.'),
-    -- New messages
     (uuid_generate_v4(),
         (SELECT user_id FROM "User" WHERE email = 'grace@example.com'),
         (SELECT user_id FROM "User" WHERE email = 'frank@example.com'),

@@ -25,7 +25,7 @@ SELECT
     b.status AS status,
     b.created_at AS booking_creation_date
 FROM Booking b
-INNER JOIN User u ON b.user_id = u.user_id;
+INNER JOIN "User" u ON b.user_id = u.user_id;
 
 -- All properties and their reviewss
 
@@ -58,6 +58,6 @@ SELECT
     b.end_date,
     b.total_price,
     b.status
-FROM User u
+FROM "User" u
 FULL OUTER JOIN Booking b
 ON u.user_id = b.user_id;

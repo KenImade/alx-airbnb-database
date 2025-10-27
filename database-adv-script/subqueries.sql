@@ -26,7 +26,7 @@ SELECT
     u.last_name,
     u.email,
     u.phone_number
-FROM User u
+FROM "User" u
 WHERE (
     SELECT
         COUNT(*)
