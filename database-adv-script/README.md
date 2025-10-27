@@ -1,6 +1,6 @@
 # Advanced Queries
 
-This script contains SQL queries that retrieves the following information:
+This directory contains SQL queries that retrieves the following information:
 
 ## Join Queries
 
@@ -12,3 +12,8 @@ This script contains SQL queries that retrieves the following information:
 
 - All properties where the average rating is greater than 4.0 using a subquery.
 - Find users who have made more than 3 bookings.
+
+## Aggregations and Window Functions
+
+- Find the total number of bookings made by each user.
+- Rank properties based on the total number of bookings they have received.
