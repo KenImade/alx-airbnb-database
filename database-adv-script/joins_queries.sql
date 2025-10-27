@@ -41,6 +41,7 @@ SELECT
     r.created_at
 FROM Property p
 LEFT JOIN Review r ON p.property_id = r.property_id
+ORDER BY property_name;
 
 
 -- All users and all bookings
@@ -59,4 +60,4 @@ SELECT
     b.status
 FROM User u
 FULL OUTER JOIN Booking b
-ON u.user_id = b.user_id
+ON u.user_id = b.user_id;
