@@ -26,7 +26,8 @@ SELECT
     host_id,
     name,
     number_of_bookings,
-    RANK() OVER (ORDER BY number_of_bookings DESC) AS rank
+    RANK() OVER (ORDER BY number_of_bookings DESC) AS rank,
+    ROW_NUMBER() OVER (ORDER BY number_of_bookings DESC) AS row_number
 FROM (
     SELECT
         p.property_id,
@@ -37,4 +38,4 @@ FROM (
     LEFT JOIN Booking b ON p.property_id = b.property_id
     GROUP BY p.property_id, p.host_id, p.name
 ) AS property_bookings
-ORDER BY rank ASC;
+ORDER BY number_of_bookings DESC;
