@@ -90,4 +90,6 @@ FROM Booking b
 JOIN "User" u ON b.user_id = u.user_id
 JOIN Property p ON b.property_id = p.property_id
 LEFT JOIN Payment pmt ON b.booking_id = pmt.booking_id
-WHERE b.status = 'confirmed';
+WHERE b.status = 'confirmed'
+WHERE b.status = 'confirmed'
+  AND p.location IS NOT NULL;
